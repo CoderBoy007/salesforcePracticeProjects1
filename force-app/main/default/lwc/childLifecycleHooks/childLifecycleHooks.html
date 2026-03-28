@@ -1,0 +1,15 @@
+<template>
+    <lightning-card>
+        <br>
+        <template if:true={error}>
+            <div>
+                <p>Something went wrong</p>
+                <p>{error}</p>
+                <p>{stack}</p>
+            </div>
+        </template>
+        <template if:false={error}>
+            <p>No Error in Child</p>
+        </template>  
+    </lightning-card>    
+</template>
