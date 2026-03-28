@@ -7,26 +7,26 @@ export default class ChildLifecycleHooks extends LightningElement {
 
     constructor() {
         super();
-        console.log('inside Child Constructor');
+        console.log('Inside Child Constructor');
     }
 
     connectedCallback() {
-        console.log('inside Child connectedCallback');
+        console.log('Inside Child connectedCallback');
     }
 
     renderedCallback() {
-        console.log('inside Child renderedCallback');
+        console.log('Inside Child renderedCallback');
     }
 
     disconnectedCallback() {
-        console.log('inside Child disconnectedCallback');
+        console.log('Inside Child disconnectedCallback');
     }
 
     errorCallback(error, stack)
     {
         this.error = error;
         this.satck = stack;
-        console.log('inside Child errorCallback');
+        console.log('Inside Child errorCallback');
     }
 
 }
