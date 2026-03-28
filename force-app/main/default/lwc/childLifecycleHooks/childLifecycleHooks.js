@@ -5,6 +5,7 @@ export default class ChildLifecycleHooks extends LightningElement {
     error;
     stack;
 
+    //Super constructor is always called in actual constructor
     constructor() {
         super();
         console.log('Inside Child Constructor');
