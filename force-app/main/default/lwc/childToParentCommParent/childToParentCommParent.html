@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Parent in Child To Parent Communication 1">
+        <div class="slds-m-around_medium">
+            Message from Child: {message}
+        </div>
+        <c-child-to-parent-comm-child onmyevent={handleEvent}></c-child-to-parent-comm-child>
+    </lightning-card>
+    <lightning-card title="Parent in Child To Parent Communication 2">
+        <div class="slds-m-around_medium">
+            Message from Child: {message}
+        </div>
+        <c-child-to-parent-comm-child></c-child-to-parent-comm-child>
+    </lightning-card>
+</template>
