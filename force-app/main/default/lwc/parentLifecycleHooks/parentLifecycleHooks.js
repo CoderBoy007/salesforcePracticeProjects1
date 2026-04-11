@@ -3,6 +3,7 @@ import { LightningElement } from 'lwc';
 export default class ParentLifecycleHooks extends LightningElement {
     error;
     stack;
+    showChild = true;
 
     constructor(){
         super();
@@ -25,5 +26,9 @@ export default class ParentLifecycleHooks extends LightningElement {
         this.error = error;
         this.stack = stack;
         console.log('Inside Parent errorCallback');
+    }
+
+    handleToggleChild(){
+        this.showChild = !this.showChild;
     }
 }

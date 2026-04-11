@@ -26,8 +26,7 @@ export default class ChildLifecycleHooks extends LightningElement {
     errorCallback(error, stack)
     {
         this.error = error;
-        this.satck = stack;
+        this.stack = stack;
         console.log('Inside Child errorCallback');
     }
-
 }

@@ -1,14 +1,14 @@
 <template>
     <lightning-card>
         <br>
-        <template if:true={error}>
+        <template lwc:if={error}>
             <div>
                 <p>Something went wrong</p>
                 <p>{error}</p>
                 <p>{stack}</p>
             </div>
         </template>
-        <template if:false={error}>
+        <template lwc:else>
             <p>No Error in Child</p>
         </template>  
     </lightning-card>    
