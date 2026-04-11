@@ -1,16 +1,26 @@
 <template>
     <lightning-card title="Lifecycle Hooks">
         <br>
-        <template if:true={error}>
+        <template lwc:if={error}>
             <div>
                 <p>Something went wrong</p>
                 <p>{error}</p>
                 <p>{stack}</p>
             </div>
         </template>
-        <template if:false={error}>
+        <template lwc:else>
             <p>No Error in Parent</p>
-            <c-child-lifecycle-hooks></c-child-lifecycle-hooks>
+            <lightning-button label="Toggle Child" variant="brand" onclick={handleToggleChild}></lightning-button>
+            <div lwc:if={showChild}>
+                <lightning-layout>
+                    <lightning-layout-item padding="around-medium">
+                        <lightning-input label="Enter your message to be passed to child comp" onchange={handleMessageChange}></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-medium">
+                        <c-child-lifecycle-hooks></c-child-lifecycle-hooks>
+                    </lightning-layout-item>
+                </lightning-layout>             
+            </div>
         </template>   
     </lightning-card> 
 </template>
