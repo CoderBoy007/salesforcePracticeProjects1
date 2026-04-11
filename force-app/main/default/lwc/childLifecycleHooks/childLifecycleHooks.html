@@ -1,15 +1,20 @@
 <template>
     <lightning-card>
         <br>
-        <template if:true={error}>
+        <template lwc:if={error}>
             <div>
                 <p>Something went wrong</p>
                 <p>{error}</p>
                 <p>{stack}</p>
             </div>
         </template>
-        <template if:false={error}>
-            <p>No Error in Child</p>
+        <template lwc:else>
+            <lightning-layout>
+                <lightning-layout-item padding="around-medium">
+                    <p>No Error in Child</p>
+                    <p>Message from parent will come here: {message}</p>
+                </lightning-layout-item>
+            </lightning-layout>
         </template>  
     </lightning-card>    
 </template>

@@ -1,9 +1,10 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, api } from 'lwc';
 
 export default class ChildLifecycleHooks extends LightningElement {
 
     error;
     stack;
+    message;
 
     //Super constructor is always called in actual constructor
     constructor() {
@@ -26,8 +27,12 @@ export default class ChildLifecycleHooks extends LightningElement {
     errorCallback(error, stack)
     {
         this.error = error;
-        this.satck = stack;
+        this.stack = stack;
         console.log('Inside Child errorCallback');
     }
 
+    //method decorated with @api can be accessed from parent component
+    @api childMessageHandler(strData){
+        this.message = strData;
+    }
 }
