@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Area Calculator">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-input type="number" step="0.01" label="Enter the side of square" value={squareSide} onchange={handleSideSquareChange}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-input type="number" step="0.01" label="Enter the length of rectangle" value={rectangleLength} onchange={handleRectangleLengthChange}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-input type="number" step="0.01" label="Enter the width of rectangle" value={rectangleWidth} onchange={handleRectangleWidthChange}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-input type="number" step="0.01" label="Enter the first diagonal of rhombus" value={rhombusFirstSide} onchange={handleRhombusFirstSideChange}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-input type="number" step="0.01" label="Enter the second diagonal of rhombus" value={rhombusSecondSide} onchange={handleRhombusSecondSideChange}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-button-group>
+                    <lightning-button label="Calculate Area of Square" onclick={handleSquareArea} icon-position="left"></lightning-button>
+                    <lightning-button label="Calculate Area of Rectangle" onclick={handleRectangleArea} icon-position="center"></lightning-button>
+                    <lightning-button label="Calculate Area of Rhombus" onclick={handleRhombusArea} icon-position="right"></lightning-button>
+                </lightning-button-group>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-formatted-text value={calculatedOutput}></lightning-formatted-text>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
