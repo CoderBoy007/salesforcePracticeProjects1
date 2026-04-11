@@ -12,7 +12,14 @@
             <p>No Error in Parent</p>
             <lightning-button label="Toggle Child" variant="brand" onclick={handleToggleChild}></lightning-button>
             <div lwc:if={showChild}>
-                 <c-child-lifecycle-hooks></c-child-lifecycle-hooks>
+                <lightning-layout>
+                    <lightning-layout-item padding="around-medium">
+                        <lightning-input label="Enter your message to be passed to child comp" onchange={handleMessageChange}></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-medium">
+                        <c-child-lifecycle-hooks></c-child-lifecycle-hooks>
+                    </lightning-layout-item>
+                </lightning-layout>             
             </div>
         </template>   
     </lightning-card> 

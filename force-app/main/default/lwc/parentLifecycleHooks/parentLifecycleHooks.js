@@ -31,4 +31,8 @@ export default class ParentLifecycleHooks extends LightningElement {
     handleToggleChild(){
         this.showChild = !this.showChild;
     }
+
+    handleMessageChange(event){
+        this.template.querySelector('c-child-lifecycle-hooks').childMessageHandler(event.target.value);
+    }
 }

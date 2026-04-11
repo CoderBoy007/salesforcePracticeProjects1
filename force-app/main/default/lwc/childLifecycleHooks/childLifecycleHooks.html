@@ -9,7 +9,12 @@
             </div>
         </template>
         <template lwc:else>
-            <p>No Error in Child</p>
+            <lightning-layout>
+                <lightning-layout-item padding="around-medium">
+                    <p>No Error in Child</p>
+                    <p>Message from parent will come here: {message}</p>
+                </lightning-layout-item>
+            </lightning-layout>
         </template>  
     </lightning-card>    
 </template>
