@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="For-Each Example">
+        <ul>
+            <template for:each={wrestlers} for:item="wrestler">
+                <li key={wrestler.Id}>
+                    Title : {wrestler.Name} - {wrestler.FinishingMove}
+                </li>
+            </template>
+        </ul> 
+    </lightning-card>&nbsp;&nbsp;
+    <lightning-card title="Iterator Example">
+        <ul>
+            <template iterator:it={wrestlers}>            
+                <li key={it.value.Id}>
+                    <div lwc:if={it.first} class="list-First"></div>
+                        <p>Title : {it.value.Name} - {it.value.FinishingMove}</p>
+                    <div lwc:if={it.last} class="list-Last"></div>
+                </li>
+            </template>
+        </ul> 
+    </lightning-card>   
+</template>
