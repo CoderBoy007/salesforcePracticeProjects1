@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="User Details" icon-name="custom:custom11">
+        <div class="slds-p-around_medium">
+            <template lwc:if={user}>
+                <div class="slds-text-align_center slds-m-bottom_medium">
+                    <img src={user.avatar_url} alt="User Avatar" style="width: 100px; border-radius: 50%;"/>
+                </div>
+                <p><strong>Name:</strong> {user.name}</p>
+                <p><strong>Bio:</strong> {user.bio}</p>
+                <p><strong>Public Repositories:</strong> {user.public_repos}</p>
+                <p><strong>Followers:</strong> {user.followers}</p>
+            </template>
+            <template lwc:else>
+                <p class="slds-text-color_weak">Search for a user to see their details here.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
+
