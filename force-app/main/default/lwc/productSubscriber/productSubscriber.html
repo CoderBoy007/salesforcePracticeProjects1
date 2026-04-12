@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Product Details Display" icon-name="standard:display_text">
+        <div class="slds-p-around_medium slds-text-align_center">
+            <template lwc:if={receivedProduct}>
+                <h2 class="slds-text-heading_large slds-text-color_success">{receivedProduct}</h2>
+                <p class="slds-m-top_small">This component successfully heard the broadcast!</p>
+            </template>
+            <template lwc:else>
+                <p class="slds-text-color_weak">Waiting for a product broadcast...</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
