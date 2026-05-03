@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Top Accounts" icon-name="contact">
+        <div class="slds-var-p-around_medium">
+            <template lwc:if={hasAccounts}>
+                <h3 class="slds-text-heading_small">Top Accounts By Annual Revenue</h3>
+                <div class="slds-var-p-around_medium">
+                    <lightning-datatable data={accountsData} columns={accountColumns} key-field="id" max-row-selection="1" onrowselection={handleRowSelection}></lightning-datatable>
+                </div>
+            </template>
+            <template lwc:else>
+                <p>No account data available.</p>
+            </template> 
+            <template lwc:if={selectedAccountName}>
+                <template lwc:if={opportunities}>
+                    <h3 class="slds-text-heading_small">Opportunities for {selectedAccountName}</h3>
+                    <lightning-datatable data={opportunitiesData} columns={opportunitiesColumns} key-field="id" hide-checkbox-column></lightning-datatable>
+                </template>
+                <template lwc:else>
+                    <p>No Opportunities available for selected account</p>
+                </template>
+            </template>
+        </div>  
+    </lightning-card>  
+</template>
