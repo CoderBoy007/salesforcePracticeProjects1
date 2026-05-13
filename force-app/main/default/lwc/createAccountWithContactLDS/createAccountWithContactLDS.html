@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="Create Account With Contact">
+        <div class="slds-var-p-around_small">
+            <lightning-input label="Account Name"
+                name="accountName"
+                value={accountName} 
+                required="true"
+                message-when-value-missing="Enter a value" 
+                onchange={handleInputChange}>
+            </lightning-input>
+            <lightning-combobox label="Industry Name"
+                name="industry"
+                value={industry} 
+                options={industryOptions}
+                onchange={handleInputChange}>
+            </lightning-combobox>
+            <lightning-input label="Contact Last Name"
+                name="lastName"
+                value={lastName} 
+                required="true"
+                class="contactLastName"
+                message-when-value-missing="Enter a value" 
+                onchange={handleInputChange}>
+            </lightning-input>
+        </div>
+        <div class="slds-var-p-around_medium">
+            <lightning-button label="Save" 
+                onclick={handleSave} 
+                variant="brand">
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

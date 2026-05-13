@@ -1,0 +1,35 @@
+<template>
+    <template lwc:if={isAccountsPresent}>
+        <div style="height: 300px;">
+            <lightning-datatable
+                    key-field="accId"
+                    data={accounts.data}
+                    columns={accColumns}
+                    onrowselection={handleSelectedRows}>
+            </lightning-datatable>
+        </div> 
+    </template> 
+    <template lwc:else>
+        <p>No Data to show</p>
+    </template> 
+    <template lwc:if={isOpportunitiesPresent}>
+        <div class="slds-var-m-around_medium">
+            <lightning-datatable
+                    key-field="oppId"
+                    data={opportunities}
+                    columns={oppColumns}
+                    hide-checkbox-column>
+            </lightning-datatable>
+        </div> 
+    </template> 
+    <template lwc:if={isCasesPresent}>
+        <div class="slds-var-m-around_medium">
+            <lightning-datatable
+                    key-field="caseId"
+                    data={cases}
+                    columns={caseColumns}
+                    hide-checkbox-column>
+            </lightning-datatable>
+        </div> 
+    </template> 
+</template>
